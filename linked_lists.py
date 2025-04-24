@@ -32,6 +32,19 @@ class Linked_list:
         new_node.next = self.head
         self.head = new_node
 
+    def add_last(self, new_node):
+        if self.head == None:
+            self.head = new_node
+            return
+
+        node = self.head
+        while node != None:
+            if node.next == None:
+                node.next = new_node
+                return
+            node = node.next
+
+
     def add_after(self, new_node, target_node_data):
         if self.head == None:
             raise Exception('Lista Vazia!')
@@ -51,5 +64,5 @@ third_node = Node('c')
 linked_list = Linked_list()
 
 linked_list.add_first(first_node)
-linked_list.add_after(second_node, 'a')
+linked_list.add_last(third_node)
 print(linked_list)
