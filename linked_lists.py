@@ -19,24 +19,37 @@ class Linked_list:
         nodes.append("None")
         return " -> ".join(nodes)
 
-    def add_node_after(self, new_node, index_node):
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next
+
+    def add_first(self, new_node):
         if self.head == None:
-            return 'Lista Vazia'
+            self.head = new_node
+            return
+        new_node.next = self.head
+        self.head = new_node
+
+    def add_after(self, new_node, target_node_data):
+        if self.head == None:
+            raise Exception('Lista Vazia!')
 
         node = self.head
         while node != None:
-            if node.data == index_node:
+            if node.data == target_node_data:
                 new_node.next = node.next
                 node.next = new_node
-                return f'"{new_node.data}" foi adicionado com sucesso!'
+                return
             node = node.next
-        return 'Valor não encontrado na lista!'
+        raise Exception(f'"{target_node_data}" não foi encontrado!')
 
-fist_node = Node('a')
-secund_node = Node('b')
-tirth_node = Node('c')
-
+first_node = Node('a')
+second_node = Node('b')
+third_node = Node('c')
 linked_list = Linked_list()
-linked_list.head = fist_node
-print(linked_list.add_node_after(tirth_node, 'a'))
+
+linked_list.add_first(first_node)
+linked_list.add_after(second_node, 'a')
 print(linked_list)
