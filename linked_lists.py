@@ -62,6 +62,7 @@ class Linked_list:
             node = node.next
         raise Exception(f'"{target_node_data}" não foi encontrado!')
 
+
     def add_after(self, new_node, target_node_data):
         if self.head == None:
             raise Exception('Lista Vazia!')
@@ -75,14 +76,19 @@ class Linked_list:
             node = node.next
         raise Exception(f'"{target_node_data}" não foi encontrado!')
 
-first_node = Node('a')
-second_node = Node('b')
-third_node = Node('c')
-fourth_node = Node('d')
-linked_list = Linked_list()
 
-linked_list.add_first(first_node)
-linked_list.add_last(fourth_node)
-linked_list.add_before(second_node, 'd')
-linked_list.add_after(third_node, 'b')
-print(linked_list)
+def main():
+    first_node = Node('a')
+    second_node = Node('b')
+    third_node = Node('c')
+    fourth_node = Node('d')
+    linked_list = Linked_list()
+
+    linked_list.add_first(first_node)
+    linked_list.add_last(fourth_node)
+    linked_list.add_before(second_node, 'd')
+    linked_list.add_after(third_node, 'b')
+    print(linked_list)
+
+if __name__ == "__main__":
+    main()
