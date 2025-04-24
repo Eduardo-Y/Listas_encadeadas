@@ -1,7 +1,3 @@
-Aqui está o README gerado para o código que você forneceu:
-
----
-
 # Implementação de Listas Encadeadas em Python
 
 Este repositório contém uma implementação de uma lista encadeada em Python. A lista encadeada é uma estrutura de dados linear composta de "nós", onde cada nó contém um valor (`data`) e uma referência (`next`) ao próximo nó na sequência.
@@ -51,6 +47,4 @@ print(linked_list)  # Saída: a -> b -> c -> d -> None
 - **Manipulação Dinâmica**: Você pode adicionar novos nós em qualquer posição na lista encadeada.
 - **Iteração**: A lista encadeada suporta iteração fácil usando o método `__iter__`.
 
----
-
-Se precisar de ajustes ou preferir incluir algo mais, é só dizer! 😊
+Código escrito com ajuda do artigo sobre listas encadeadas do site "Real Python" que encontra-se no seguinte link: https://realpython.com/linked-lists-python/#implementing-your-own-linked-list
