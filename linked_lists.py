@@ -36,6 +36,13 @@ class Linked_list:
         self.head = new_node
 
 
+    def remove_first(self):
+        if self.head == None:
+            raise Exception('Lista Vazia!')
+
+        self.head = self.head.next
+
+
     def add_last(self, new_node):
         if self.head == None:
             self.head = new_node
@@ -45,6 +52,18 @@ class Linked_list:
         while node != None:
             if node.next == None:
                 node.next = new_node
+                return
+            node = node.next
+
+    
+    def remove_last(self):
+        if self.head == None:
+            raise Exception('Lista Vazia!')
+        
+        node = self.head
+        while node is not None:
+            if node.next.next == None:
+                node.next = None
                 return
             node = node.next
 
@@ -84,10 +103,12 @@ def main():
     fourth_node = Node('d')
     linked_list = Linked_list()
 
-    linked_list.add_first(first_node)
-    linked_list.add_last(fourth_node)
-    linked_list.add_before(second_node, 'd')
-    linked_list.add_after(third_node, 'b')
+    linked_list.add_first(first_node) # a -> None
+    linked_list.add_last(fourth_node) # a -> d -> None
+    linked_list.add_before(second_node, 'd') # a -> b -> d -> None
+    linked_list.add_after(third_node, 'b') # a -> b -> c -> d -> None
+    linked_list.remove_first() # b -> c -> d -> None
+    linked_list.remove_last() # b -> c -> None
     print(linked_list)
 
 if __name__ == "__main__":
