@@ -66,3 +66,5 @@ O arquivo `main()` no código de exemplo demonstra algumas das operações bási
 ### Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues para relatar bugs ou sugerir melhorias, ou enviar pull requests com suas modificações.
+
+Código escrito com ajuda do artigo sobre listas encadeadas do site "Real Python" que encontra-se no seguinte link: https://realpython.com/linked-lists-python/#implementing-your-own-linked-list
