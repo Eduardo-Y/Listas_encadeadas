@@ -94,6 +94,37 @@ class Linked_list:
                 return
             node = node.next
         raise Exception(f'"{target_node_data}" não foi encontrado!')
+    
+
+    def remove(self, target_node_data):
+        if self.head == None:
+            raise Exception('Lista Vazia!')
+        
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+        node = self.head
+        while node is not None:
+            if node.next.data == target_node_data:
+                node.next = node.next.next
+                return
+            node = node.next
+        raise Exception(f'"{target_node_data}" não foi encontrado!')
+    
+
+    def reverse(self):
+        if self.head == None:
+            raise Exception('Lista Vazia!')
+        
+        prev = None
+        node = self.head
+        while node is not None:
+            next_node = node.next
+            node.next = prev
+            prev = node
+            node = next_node
+            if node == None:
+                self.head = prev
 
 
 def main():
@@ -107,8 +138,13 @@ def main():
     linked_list.add_last(fourth_node) # a -> d -> None
     linked_list.add_before(second_node, 'd') # a -> b -> d -> None
     linked_list.add_after(third_node, 'b') # a -> b -> c -> d -> None
-    linked_list.remove_first() # b -> c -> d -> None
-    linked_list.remove_last() # b -> c -> None
+    print(linked_list)
+    linked_list.reverse() # d -> c -> b -> a -> None
+    print(linked_list)
+    linked_list.remove_first() # c -> b -> a -> None
+    linked_list.remove_last() # c -> b -> None
+    linked_list.remove('b') # c -> None
+    linked_list.remove('c') # None
     print(linked_list)
 
 if __name__ == "__main__":
